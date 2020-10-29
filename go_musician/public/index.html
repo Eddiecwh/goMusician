@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Go Musician</title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Eddie Chan</a>
+      <nav>
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="wrapper">
+      <section class="hero">
+        <div class="inner">
+          <div class="clipper">
+            <h1>GO MUSICIAN</h1>
+          </div>
+          <div class="anim-panel">
+            <p>Music is cool, don't you think?</p>
+            <a href="#" class="read-btn primary">GET FAMOUS</a>
+          </div>
+        </div>
+      </section>
+      <section class="sidebar">
+        <div class="inner">
+          <div class="clipper">
+            <h2>FEATURED</h2>
+          </div>
+          <div class="anim-panel">
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et
+            </p>
+            <a href="#" class="read-btn">READ MORE</a>
+          </div>
+        </div>
+      </section>
+      <section class="subscribe">
+        <div class="inner">
+            <div class="clipper">
+              <h2>SUBSCRIBE</h2>
+            </div>
+            <div class="anim-panel">
+              <p>
+                Get the latest updates about this website, you're just one click away!
+              </p>
+              <input type="text" name="email" placeholder="Email Address">
+              <button class="cta">Subscribe Now</button>
+            </div>  
+      </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            window.addEventListener("load", function(e) {
+
+                document.body.style.display = "block";
+
+                var tl = new TimelineMax();
+
+                tl.staggerFrom('section', 2, {
+                opacity: 0,
+                scale: .5,
+                ease: Power2.easeOut
+                }, 0.2)
+
+                tl.staggerFrom('h1, h2', 0.5, {
+                    opacity: 0,
+                    y: -40,
+                    ease: Power2.easeInOut
+                }, 0.2, "-=2")
+
+                tl.staggerFrom('.anim-panel', 1, {
+                    opacity: 0,
+                    y: -40,
+                    ease: Power2.easeInOut
+                }, 0.2, "-=1.5")
+            }, false);
+        })
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.15.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/7.15.5/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    
+  </body>
+</html>

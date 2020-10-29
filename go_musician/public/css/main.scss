@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
+
+// Creating variables in SASS
+$primary-color: #ffde74;
+$submit-btn-bg-color: black;
+$submit-btn-color: white;
+
+body,
+html {
+  font-size: 20px;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  font-family: "Montserrat";
+  display: none;
+}
+
+header {
+  position: absolute;
+  padding: 1em;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between; // Push out the logo, and the navigation
+  width: calc(100% - 2em);
+  background: rgba(0, 0, 0, 0.2);
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      padding: 1em;
+      color: white;
+    }
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto;
+  height: 100vh;
+
+  section {
+    align-items: center;
+      padding: 3em;
+
+      h1, h2, .read-btn {
+          text-transform: uppercase;
+          margin: 0;
+      }
+
+      h2 {
+          font-size: 2.5em;
+      }
+
+      .read-btn {
+          text-decoration: none;
+          color: black;
+          font-weight: bold;
+          background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/arrow.svg') no-repeat;
+          background-size: 8px;
+          background-position: 0 1px;
+          padding-left: 1em;
+      }
+
+      .primary {
+          padding: 1.5em 1.5em 1.5em calc(3em + 25px);
+          background-position: 3em;
+          border: 1px solid gray;
+          margin-top: 3em;
+          margin-left: -3em;
+          display: inline-block;
+      }
+
+      .clipper {
+          overflow: hidden;
+      }
+  }
+
+  section.hero {
+    padding-top: 8em;
+    background: url("../assets/hero.jpg");
+    background-size: cover;
+
+    p {
+      width: 70%;
+      font-size: 1.2rem;
+      margin-bottom: 0;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+  }
+
+  section.sidebar,
+  section.subscribe {
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+  }
+
+  section.sidebar {
+    background: $primary-color;
+
+    .read-btn {
+      display: block;
+      background-position: 0 0.3em;
+    }
+  }
+
+  section.subscribe {
+    input {
+      width: calc(100% - 2em);
+      padding: 1em;
+      font-family: "Montserrat";
+      margin-bottom: 1em;
+    }
+
+    button {
+      width: calc(100% - 2em);
+      background-color: $submit-btn-bg-color;
+      color: $submit-btn-color;
+      padding: 1em;
+      border: none;
+      font-family: "Montserrat";
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  header {
+    background: none;
+
+    nav ul {
+      li a {
+        padding: 1em;
+        color: black;
+      }
+    }
+  }
+
+  .wrapper {
+    grid-template-columns: 70% auto;
+    grid-template-rows: 60% auto;
+    grid-template-areas:
+      "hero featured"
+      "hero subscribe";
+    height: 100vh;
+  }
+
+  section.hero {
+      grid-area: hero;
+  }
+
+  section {
+      display: grid;
+      grid-template-rows: auto;
+      align-items: center;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+    html {
+        font-size: 21px;
+    }
+}
